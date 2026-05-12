@@ -3,9 +3,9 @@ import Question from "../models/questionModel.js";
 
 export const addQuestion = async(req,res)=>{
     try {
-        const {testId,question,option,correctAnswer} = req.body;
+        const {testId,question,options,correctAnswer} = req.body;
 
-        if (!testId || !question || !option || !correctAnswer) {
+        if (!testId || !question || !options || !correctAnswer) {
             return res.status(400).json({success:false,message:"All fields are required"})
         }
 
@@ -14,7 +14,7 @@ export const addQuestion = async(req,res)=>{
         await Question.create({
             testId,
             question,
-            option,
+            options,
             correctAnswer
         })
 

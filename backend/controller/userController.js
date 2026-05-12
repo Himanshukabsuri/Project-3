@@ -56,7 +56,7 @@ export const login = async(req,res)=>{
             return res.status(400).json({success:false,message:"Invalid creditional"})
         }
 
-        const token = jwt.sign({id:existUser._id},process.env.JWT_SECRET,{expiresIn:"7d"})
+        const token = jwt.sign({id:existUser._id,role:existUser.role},process.env.JWT_SECRET,{expiresIn:"7d"})
 
          res.status(200).json({success:true,message:"login successfully",token})
 

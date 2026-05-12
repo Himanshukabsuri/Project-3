@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import connectDb from './config/db.js';
 import userRoutes from './routes/authRoutes.js'
+import testRoute from './routes/testRoutes.js'
 
 dotenv.config()
 
@@ -12,6 +13,7 @@ app.use(cors())
 connectDb()
 
 app.use("/api/auth",userRoutes)
+app.use("/api/test",testRoute);
 
 const PORT = process.env.PORT || 5000
 

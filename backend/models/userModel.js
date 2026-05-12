@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     role:[{
         type:String,enum:["admin","student"],default:"admin"
     }]
-})
+},{timestamps:true})
 
 const User = mongoose.model("User",userSchema)
 

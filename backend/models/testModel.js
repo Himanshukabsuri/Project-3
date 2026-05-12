@@ -5,7 +5,7 @@ const testSchema = new mongoose.Schema({
     description:{type:String,required:true},
     duration:{type:Number,required:true,default:60},
     createdBy:[{type:mongoose.Schema.Types.ObjectId,ref:"User",required:true}]
-})
+},{timestamps:true})
 
 const Test = mongoose.model("Test",testSchema)
 

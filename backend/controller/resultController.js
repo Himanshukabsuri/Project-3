@@ -1,5 +1,5 @@
-import Question from "../models/questionModel";
-import Result from "../models/resultModel";
+import Question from "../models/questionModel.js";
+import Result from "../models/resultModel.js";
 
 
 export const submitTest = async (req, res) => {
